@@ -8,7 +8,6 @@ import xgboost as xgb
 from sklearn.metrics import mean_absolute_error
 import random
 
-
 # Cargar datasets
 df_preuLloguer = pd.read_csv('data/preuLloguer.csv', sep=';', on_bad_lines='skip')
 df_poblacion = pd.read_csv('data/poblacio.csv', sep=';', on_bad_lines='skip')
@@ -101,36 +100,19 @@ def hill_climbing(max_iterations=40):
     print(f"Mejor solución encontrada: {current_solution}, MAE: {current_mae:.4f}")
     return best_model #Retornar el millor model
 
-#Funció per calcular la tasa de creixement mitjana
-def calculTasa(df_grouped):
-    return df_grouped.pct_change().mean() #Calcula la tasa mitjançant pct_change, que calcula el canvi percentual
+# Entrenar el modelo con la mejor configuración encontrada
+best_model = hill_climbing()
 
-#Calcula la tasa de creixement per habitatges i any
-df_habAgrupat = df.groupby('any')['habitatges'].mean()
-tasa_creixementHAB = calculTasa(df_habAgrupat)
-print("Tasa de crecimiento anual para habitatges:", tasa_creixementHAB)
-
-# Calcular la tasa de crecimiento para 'hab_turistic'
-df_habTuristic_agrupado = df.groupby('any')['hab_turistic'].mean()
-tasa_hab = calculTasa(df_habTuristic_agrupado)
-print("Tasa de crecimiento anual para hab_turistic:", tasa_hab)
-
-# Si existe la columna 'poblacion', se calcula también su tasa de crecimiento
-if 'poblacion' in df.columns:
-    df_poblacio = df.groupby('any')['poblacion'].mean()
-    tasa_poblacio = calculTasa(df_poblacio)
-    print("Tasa de crecimiento anual para poblacion:", tasa_poblacio)
+df_renda_agrupat = df.groupby('any')['renda'].mean() #Calcular la mitjana de la renta per any
+tasa_crecimiento_renda = df_renda_agrupat.pct_change().mean() #Calcular la tasa de crecimiento anual de la renta
+print("Tasa de crecimiento anual para renta:", tasa_crecimiento_renda)
 
 # Obtener el último año disponible (base para proyecciones futuras)
 last_year = int(df['any'].max())
 
-# Función para proyectar un valor futuro basado en un valor base, el número de años y una tasa de crecimiento
-def proyectar_valor(valor_base, anysFutur, tasa):
-    return valor_base * (1 + tasa) ** anysFutur
-
+# Propers 5 anys segons la tasa de creixement de la renta dels últims 5 anys
 def predict_future_years(model, last_year, num_years=5):
     future_years = []
-    #Valor base per habitatges i habitatges turístics
     base_habitatges = df[df['any'] == last_year]['habitatges'].mean()
     base_hab_turistic = df[df['any'] == last_year]['hab_turistic'].mean()
     if 'poblacion' in df.columns:
@@ -138,49 +120,33 @@ def predict_future_years(model, last_year, num_years=5):
     else:
         base_poblacion = None
 
-    #Obtenir llista de territoris del label encoder
-    known_territories = label_encoders['nomterritori'].classes_
+    known_territories = label_encoders['nomterritori'].classes_ 
 
-    #Iteració de cada any futur
     for year in range(last_year + 1, last_year + num_years + 1):
-        anysDif = year - last_year
-        # Projectar variables basades en la tasa de creixement
-        habProject = proyectar_valor(base_habitatges, anysDif, tasa_creixementHAB)
-        habTuristicProject = proyectar_valor(base_hab_turistic, anysDif, tasa_hab)
-        if base_poblacion is not None: #Si hi ha població, projectar-la
-            poblacion_proyectada = proyectar_valor(base_poblacion, anysDif, tasa_poblacio)
-        else: #si no hi ha població, assignar None
-            poblacion_proyectada = None
-
-        # Iterar sobre cada territori de la llista d coneguts
         for territori in known_territories:
-            #Es crea el dataframe amb les dades projectades
             new_data = {
-                'nomterritori': territori,  #NOM REAL NO ID DEL LABELCODER!!
+                'nomterritori': territori,
                 'any': year,
-                'habitatges': habProject,
-                'hab_turistic': habTuristicProject
+                'habitatges': base_habitatges,
+                'hab_turistic': base_hab_turistic
             }
-            if poblacion_proyectada is not None:
-                new_data['poblacion'] = poblacion_proyectada
+            if base_poblacion is not None:
+                new_data['poblacion'] = base_poblacion
 
             new_data = pd.DataFrame([new_data])
-            #Codificar el territori per a q sigui compatible amb el model
             new_data_numeric = new_data.copy()
-            new_data_numeric['nomterritori'] = label_encoders['nomterritori'].transform(
-                new_data_numeric['nomterritori'].astype(str))
+            new_data_numeric['nomterritori'] = label_encoders['nomterritori'].transform(new_data_numeric['nomterritori'].astype(str))
 
-            #Una vegada tenim la projeccio, es prediu la renta amb la millor opció de model trobada
+            # Se predice la renta y se ajusta aplicando la tasa de crecimiento de la renta
             predicted_renda = model.predict(new_data_numeric)
-            new_data['renda_predicha'] = predicted_renda
-            future_years.append(new_data) #Afegir les dades a la llista de futurs anys
+            ajuste = (1 + tasa_crecimiento_renda) ** (year - last_year)
+            predicted_renda_adjusted = predicted_renda * ajuste
+
+            new_data['renda_predicha'] = predicted_renda_adjusted
+            future_years.append(new_data)
 
     return pd.concat(future_years, ignore_index=True)
 
-
-#Entrena el model i
-best_model = hill_climbing()
-# Predir els propers 5 anys amb el model trobat
+# Predicción de los próximos 5 años con el modelo entrenado
 predictions = predict_future_years(best_model, last_year)
-# Guardar las predicciones en un archivo CSV
 predictions.to_csv('predictions.csv', index=False, sep=';')
