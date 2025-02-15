@@ -1,0 +1,156 @@
+año;provincia;relación con la actividad económica;valor
+2021;Barcelona;población ocupada;2384384
+2021;Barcelona;población desocupada;343461
+2021;Barcelona;total población activa;2727845
+2021;Barcelona;población pensionista de invalidez;123589
+2021;Barcelona;población pensionista de jubilación, prejubilación;877457
+2021;Barcelona;población estudiante;260758
+2021;Barcelona;población con otra situación de inactividad;821516
+2021;Barcelona;total población inactiva;2083320
+2021;Barcelona;total;4811165
+2021;Girona;población ocupada;313097
+2021;Girona;población desocupada;48652
+2021;Girona;total población activa;361749
+2021;Girona;población pensionista de invalidez;12941
+2021;Girona;población pensionista de jubilación, prejubilación;117271
+2021;Girona;población estudiante;33438
+2021;Girona;población con otra situación de inactividad;128409
+2021;Girona;total población inactiva;292059
+2021;Girona;total;653808
+2021;Lleida;población ocupada;186536
+2021;Lleida;población desocupada;25215
+2021;Lleida;total población activa;211751
+2021;Lleida;población pensionista de invalidez;10238
+2021;Lleida;población pensionista de jubilación, prejubilación;67272
+2021;Lleida;población estudiante;19234
+2021;Lleida;población con otra situación de inactividad;61257
+2021;Lleida;total población inactiva;158001
+2021;Lleida;total;369752
+2021;Tarragona;población ocupada;316989
+2021;Tarragona;población desocupada;59334
+2021;Tarragona;total población activa;376323
+2021;Tarragona;población pensionista de invalidez;19485
+2021;Tarragona;población pensionista de jubilación, prejubilación;124303
+2021;Tarragona;población estudiante;38404
+2021;Tarragona;población con otra situación de inactividad;129667
+2021;Tarragona;total población inactiva;311859
+2021;Tarragona;total;688182
+2021;Catalunya;población ocupada;3201006
+2021;Catalunya;población desocupada;476662
+2021;Catalunya;total población activa;3677668
+2021;Catalunya;población pensionista de invalidez;166253
+2021;Catalunya;población pensionista de jubilación, prejubilación;1186303
+2021;Catalunya;población estudiante;351834
+2021;Catalunya;población con otra situación de inactividad;1140849
+2021;Catalunya;total población inactiva;2845239
+2021;Catalunya;total;6522907
+2022;Barcelona;población ocupada;2476010
+2022;Barcelona;población desocupada;262768
+2022;Barcelona;total población activa;2738778
+2022;Barcelona;población pensionista de invalidez;120227
+2022;Barcelona;población pensionista de jubilación, prejubilación;890088
+2022;Barcelona;población estudiante;261283
+2022;Barcelona;población con otra situación de inactividad;814630
+2022;Barcelona;total población inactiva;2086228
+2022;Barcelona;total;4825006
+2022;Girona;población ocupada;330761
+2022;Girona;población desocupada;36075
+2022;Girona;total población activa;366836
+2022;Girona;población pensionista de invalidez;12716
+2022;Girona;población pensionista de jubilación, prejubilación;120136
+2022;Girona;población estudiante;33344
+2022;Girona;población con otra situación de inactividad;127510
+2022;Girona;total población inactiva;293706
+2022;Girona;total;660542
+2022;Lleida;población ocupada;193753
+2022;Lleida;población desocupada;19608
+2022;Lleida;total población activa;213361
+2022;Lleida;población pensionista de invalidez;10057
+2022;Lleida;población pensionista de jubilación, prejubilación;68200
+2022;Lleida;población estudiante;19214
+2022;Lleida;población con otra situación de inactividad;61098
+2022;Lleida;total población inactiva;158569
+2022;Lleida;total;371930
+2022;Tarragona;población ocupada;332953
+2022;Tarragona;población desocupada;46906
+2022;Tarragona;total población activa;379859
+2022;Tarragona;población pensionista de invalidez;19502
+2022;Tarragona;población pensionista de jubilación, prejubilación;127369
+2022;Tarragona;población estudiante;38735
+2022;Tarragona;población con otra situación de inactividad;130981
+2022;Tarragona;total población inactiva;316587
+2022;Tarragona;total;696446
+2022;Catalunya;población ocupada;3333477
+2022;Catalunya;población desocupada;365357
+2022;Catalunya;total población activa;3698834
+2022;Catalunya;población pensionista de invalidez;162502
+2022;Catalunya;población pensionista de jubilación, prejubilación;1205793
+2022;Catalunya;población estudiante;352576
+2022;Catalunya;población con otra situación de inactividad;1134219
+2022;Catalunya;total población inactiva;2855090
+2022;Catalunya;total;6553924
+2011;Barcelona;población ocupada a tiempo completo;1892510
+2011;Barcelona;población ocupada a tiempo parcial;354709
+2011;Barcelona;población ocupada;2247218
+2011;Barcelona;población desocupada que ha trabajado antes;656938
+2011;Barcelona;población desocupada que busca el primer trabajo;102284
+2011;Barcelona;población desocupada;759222
+2011;Barcelona;población activa;3006440
+2011;Barcelona;población pensionista de invalidez;83209
+2011;Barcelona;población pensionista de jubilación, prejubilación;1037908
+2011;Barcelona;población estudiante;1007754
+2011;Barcelona;población con otra situación de inactividad;352352
+2011;Barcelona;población inactiva;2481223
+2011;Barcelona;total;5487663
+2011;Girona;población ocupada a tiempo completo;256083
+2011;Girona;población ocupada a tiempo parcial;46413
+2011;Girona;población ocupada;302496
+2011;Girona;población desocupada que ha trabajado antes;96731
+2011;Girona;población desocupada que busca el primer trabajo;14705
+2011;Girona;población desocupada;111437
+2011;Girona;población activa;413933
+2011;Girona;población pensionista de invalidez;9078
+2011;Girona;población pensionista de jubilación, prejubilación;133561
+2011;Girona;población estudiante;142887
+2011;Girona;población con otra situación de inactividad;48416
+2011;Girona;población inactiva;333943
+2011;Girona;total;747875
+2011;Lleida;población ocupada a tiempo completo;153365
+2011;Lleida;población ocupada a tiempo parcial;26641
+2011;Lleida;población ocupada;180006
+2011;Lleida;población desocupada que ha trabajado antes;46414
+2011;Lleida;población desocupada que busca el primer trabajo;7508
+2011;Lleida;población desocupada;53922
+2011;Lleida;población activa;233927
+2011;Lleida;población pensionista de invalidez;6063
+2011;Lleida;población pensionista de jubilación, prejubilación;84705
+2011;Lleida;población estudiante;79133
+2011;Lleida;población con otra situación de inactividad;31013
+2011;Lleida;población inactiva;200914
+2011;Lleida;total;434841
+2011;Tarragona;población ocupada a tiempo completo;255204
+2011;Tarragona;población ocupada a tiempo parcial;48992
+2011;Tarragona;población ocupada;304196
+2011;Tarragona;población desocupada que ha trabajado antes;111393
+2011;Tarragona;población desocupada que busca el primer trabajo;16166
+2011;Tarragona;población desocupada;127559
+2011;Tarragona;población activa;431755
+2011;Tarragona;población pensionista de invalidez;10123
+2011;Tarragona;población pensionista de jubilación, prejubilación;146529
+2011;Tarragona;población estudiante;154701
+2011;Tarragona;población con otra situación de inactividad;59449
+2011;Tarragona;población inactiva;370803
+2011;Tarragona;total;802558
+2011;Catalunya;población ocupada a tiempo completo;2557161
+2011;Catalunya;población ocupada a tiempo parcial;476755
+2011;Catalunya;población ocupada;3033916
+2011;Catalunya;población desocupada que ha trabajado antes;911476
+2011;Catalunya;población desocupada que busca el primer trabajo;140663
+2011;Catalunya;población desocupada;1052138
+2011;Catalunya;población activa;4086055
+2011;Catalunya;población pensionista de invalidez;108474
+2011;Catalunya;población pensionista de jubilación, prejubilación;1402704
+2011;Catalunya;población estudiante;1384475
+2011;Catalunya;población con otra situación de inactividad;491230
+2011;Catalunya;población inactiva;3386882
+2011;Catalunya;total;7472937
