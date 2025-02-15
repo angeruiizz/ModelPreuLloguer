@@ -129,6 +129,7 @@ last_year = int(df['any'].max())
 predictions = predict_future_years(best_model, last_year)
 predictions.to_csv('predictions.csv', index=False, sep=';')
 
+'''
 # Guardar en MongoDB
 load_dotenv(dotenv_path='psswd.env')  # Fichero con la contraseña de la base de datos
 MONGO_URI = os.getenv('MONGO_URI')
@@ -144,3 +145,4 @@ collection.insert_many(data)
 print('Datos insertados en la colección', collection_name)
 
 client.close()
+'''
